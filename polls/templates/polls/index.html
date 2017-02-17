@@ -4,57 +4,45 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="">
-		<meta name="author" content="">
 		<link rel="icon" href="favicon.jpg">
 		<title>Quem vai ganhar a Champions League?</title>
-                {% load staticfiles %}
-                <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 		<link href="bootstrap.min.css" rel="stylesheet">
 		<link href="ie10-viewport-bug-workaround.css" rel="stylesheet">
+		{% load staticfiles %}
+  		<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 		<script src="ie-emulation-modes-warning.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	</head>
 <body>
 <div class="site-wrapper">
-
 	<div class="site-wrapper-inner">
-	
 		<div class="cover-container">
-		
 			<div class="masthead clearfix">
-			
 				<div class="inner">
-				
-					<h3 class="masthead-brand">mypro</h3>
-					
+					<h3 class="masthead-brand">Empresa</h3>
 				</div>
 			</div>
-
 <div class="inner cover"><br>
-
-		{% if latest_question_list %}
-		    <ul>
-		    {% for question in latest_question_list %}
-			<li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-		    {% endfor %}
-		    </ul>
-		{% else %}
-		    <p>No polls are available.</p>
-		{% endif %}
-	
+	<figure class="html5">
+		<img src="logocl.png"/>
+	</figure>
+	{% if latest_question_list %}
+	    <ul>
+	    {% for question in latest_question_list %}
+		<a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>No polls are available.</p>
+	{% endif %}
 </div>
-
 <div class="mastfoot">
 	<div class="inner">
 		<p>| &copy; Copyright | <a href="https://www.facebook.com/profile.php?id=100015252752601" target="_blank">Edvaldo Júnior</a> |</p>
 	</div>
 </div>
-
 		</div>
-
 	</div>
-
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
